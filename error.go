@@ -22,7 +22,7 @@ func MsgForTag(tag string) string {
 	case "email":
 		return "Invalid email"
 	}
-	return ""
+	return " "
 }
 
 func GetError(err error) []ApiError {
