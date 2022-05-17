@@ -5,7 +5,7 @@ import (
 )
 
 type Response interface {
-	Error(err error) []ApiError
+	Error(ve validator.ValidationErrors) []ApiError
 }
 
 func Error(ve validator.ValidationErrors) []ApiError {
