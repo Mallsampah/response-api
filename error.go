@@ -29,11 +29,12 @@ func MsgForTag(tag string) string {
 func GetError(err error) []ApiError {
 	fmt.Println("okeokeoke")
 	var ve validator.ValidationErrors
-	out := make([]ApiError, len(ve))
 	if errors.As(err, &ve) {
+		out := make([]ApiError, len(ve))
 		for i, fe := range ve {
 			out[i] = ApiError{Field: fe.Field(), Message: MsgForTag(fe.Tag())}
 		}
+		return out
 	}
-	return out
+	return nil
 }
