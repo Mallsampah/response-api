@@ -2,6 +2,7 @@ package responseapi
 
 import (
 	"errors"
+	"fmt"
 
 	"github.com/go-playground/validator"
 )
@@ -26,6 +27,7 @@ func MsgForTag(tag string) string {
 }
 
 func GetError(err error) []ApiError {
+	fmt.Println("okeokeoke")
 	var ve validator.ValidationErrors
 	out := make([]ApiError, len(ve))
 	if errors.As(err, &ve) {
