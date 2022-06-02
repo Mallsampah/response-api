@@ -6,15 +6,12 @@ type ApiError struct {
 	Message string `json:"message"`
 }
 
-type ApiSuccess[T any] struct {
-	Data Data[T] `json:"data"`
+type ApiSuccess[T any, R any] struct {
+	Data Data[T, R] `json:"data"`
 }
 
-type Data[T any] struct {
-	ID         string        `json:"id"`
-	Attributes Attributes[T] `json:"attributes"`
-}
-
-type Attributes[T any] struct {
-	Attributes T
+type Data[T any, R any] struct {
+	ID           string `json:"id"`
+	Attributes   T      `json:"attributes"`
+	Relationship R      `json:"relationship"`
 }
