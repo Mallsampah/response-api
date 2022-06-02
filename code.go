@@ -10,7 +10,7 @@ func Title(code string) string {
 	case "E001":
 		return "Invalid Input"
 	case "E002":
-		return "Already Exist"
+		return "Already Exists"
 	}
 
 	return ""

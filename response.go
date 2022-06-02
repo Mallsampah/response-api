@@ -15,3 +15,7 @@ func ValidationError(ve validator.ValidationErrors) []ApiError {
 func Error(code string, message string) ApiError {
 	return ApiError{Code: code, Title: Title(code), Message: message}
 }
+
+func Success(id string, T any) (apiSuccess ApiSuccess[any]) {
+	return ApiSuccess[any]{Data: Data[any]{ID: id, Attributes: Attributes[any]{Attributes: T}}}
+}
